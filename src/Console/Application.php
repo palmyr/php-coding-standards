@@ -16,6 +16,6 @@ class Application extends BaseApplication
         parent::__construct($name, $version);
         $shellCommandFactory = new ShellCommandFactory(new FileSystem());
         $this->add(new Command\FixCodeCommand($shellCommandFactory));
-        $this->add(new Command\ValidateCodeCommand());
+        $this->add(new Command\ValidateCodeCommand($shellCommandFactory));
     }
 }

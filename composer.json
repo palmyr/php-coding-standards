@@ -26,6 +26,11 @@
       "Palmyr\\CodingStandards\\": "src/"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\Palmyr\\CodingStandards\\": "tests/"
+    }
+  },
   "scripts": {
     "test": [
       "@php vendor/bin/phpunit"

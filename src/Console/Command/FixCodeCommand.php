@@ -11,21 +11,20 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
-class FixCodeCommand extends Command
+class FixCodeCommand extends AbstractBaseCommand
 {
-    protected ShellCommandFactoryInterface $shellCommandFactory;
 
     public function __construct(
         ShellCommandFactoryInterface $shellCommandFactory
     ) {
-        $this->shellCommandFactory = $shellCommandFactory;
-        parent::__construct('fix');
+
+        parent::__construct($shellCommandFactory, 'fix');
     }
 
     protected function configure()
     {
         parent::configure();
-        $this->addArgument('path', InputArgument::REQUIRED, 'The coding path to fix');
+        $this->setDescription('Fix the code');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
